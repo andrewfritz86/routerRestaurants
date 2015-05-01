@@ -3,7 +3,7 @@ console.log("main linked")
 $("#container").on("click", ".delete", function(event){
    var id = $(event.target).data("id");
    $.ajax({
-    url: "http://localhost:3000/menus/" + id,
+    url: "/menus/" + id,
     type: "DELETE"
    }).done(function(data){
     fetchAllMenus();
@@ -19,7 +19,7 @@ $("body").on("click",".addRest", function(event){
 function fetchAllMenus(){
     $("#container").empty()
     $.ajax({
-        url: "http://localhost:3000/menus",
+        url: "/menus",
         type: "GET"
     }).done(function(data){
         data.forEach(function(e){
@@ -39,7 +39,7 @@ function aboutMe(){
 function renderOne(thing){
     var $newEl = $("<div>");
     $newEl.data("id", thing.id);
-    var $header = $("<h1> <a href=http://localhost:3000/#/menus/"+$newEl.data("id")+">" + thing.restaurantName + "</a></h1>");
+    var $header = $("<h1> <a href=/#/menus/"+$newEl.data("id")+">" + thing.restaurantName + "</a></h1>");
     var $location = $("<h2>" + thing.location + "</h2>");
     var $deleteMe = $("<button class='delete'> Delete Me </button>");
     $deleteMe.data("id", thing.id);
