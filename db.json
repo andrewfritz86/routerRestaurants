@@ -1,0 +1,16 @@
+{
+  "menus": [
+    {
+      "restaurantName": "bob evans",
+      "location": "texas",
+      "cuisine": "american",
+      "id": 1
+    },
+    {
+      "restaurantName": "sams",
+      "location": "nyc",
+      "cuisine": "american",
+      "id": 2
+    }
+  ]
+}
